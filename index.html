@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Finder - Real Restaurants</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <h1>🍽️ Food Finder</h1>
+      <p>Find real restaurants near you using Google Places</p>
+    </header>
+
+    <!-- API Key Management -->
+    <section class="api-section" id="api-section">
+      <div class="api-input-group">
+        <input type="password" id="api-key-input" placeholder="Enter your Google Places API key">
+        <button id="save-api-key" class="primary-btn">Save Key</button>
+        <button id="change-api-key" class="secondary-btn" style="display:none">Change Key</button>
+      </div>
+      <p class="api-help">
+        Get your free API key: <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a>
+        <br><small>Enable "Places API (New)" and "Geocoding API"</small>
+      </p>
+      <div id="api-status" class="api-status"></div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+      <button id="get-location-btn" class="primary-btn">📍 Get My Location</button>
+      <div id="location-status" class="status-text"></div>
+
+      <div class="manual-location">
+        <input type="text" id="manual-location-input" placeholder="Enter city name or address">
+        <button id="set-location-btn" class="secondary-btn">Set Location</button>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="search-input-group">
+        <input type="text" id="food-search" placeholder="Search for food (e.g., pizza, sushi)">
+        <button id="search-btn" class="primary-btn">Search</button>
+      </div>
+
+      <div class="image-upload-section">
+        <input type="file" id="image-upload" accept="image/*" hidden>
+        <button id="upload-btn" class="secondary-btn">📷 Upload Food Image</button>
+        <div id="image-preview"></div>
+        <div id="recognition-result"></div>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+      <h3>Filters</h3>
+      <div class="filter-group">
+        <label for="distance-filter">Distance:</label>
+        <select id="distance-filter">
+          <option value="1000">1 km</option>
+          <option value="2000">2 km</option>
+          <option value="5000" selected>5 km</option>
+          <option value="10000">10 km</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="price-filter">Price Range:</label>
+        <select id="price-filter">
+          <option value="">Any Price</option>
+          <option value="1">$ (Budget)</option>
+          <option value="2">$$ (Moderate)</option>
+          <option value="3">$$$ (Expensive)</option>
+          <option value="4">$$$$ (Very Expensive)</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="rating-filter">Min Rating:</label>
+        <select id="rating-filter">
+          <option value="0">Any Rating</option>
+          <option value="3">3+ Stars</option>
+          <option value="4">4+ Stars</option>
+          <option value="4.5">4.5+ Stars</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="open-now-filter">
+          <input type="checkbox" id="open-now-filter"> Open Now
+        </label>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="results-section">
+      <div id="loading" class="loading hidden">🔄 Searching restaurants...</div>
+      <div id="results-header" class="results-header"></div>
+      <div id="restaurants-list" class="restaurants-grid"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
