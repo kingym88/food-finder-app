@@ -8,10 +8,7 @@
     "build": "echo 'No build step required'"
   },
   "dependencies": {},
-  "devDependencies": {},
-  "engines" : { 
-    "node" : "22.x" 
-  }
+  "devDependencies": {}
   
 }
 
