@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/places-search.js": {},
+    "api/geocode.js": {},
+    "api/reverse-geocode.js": {}
+  }
+}
