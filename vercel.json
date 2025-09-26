@@ -1,13 +1,13 @@
 {
   "functions": {
     "api/places-search.js": {
-      "runtime": "nodejs22.x"
+      "runtime": "nodejs22.0.0"
     },
     "api/geocode.js": {
-      "runtime": "nodejs22.x"
+      "runtime": "nodejs22.0.0"
     },
     "api/reverse-geocode.js": {
-      "runtime": "nodejs22.x"
+      "runtime": "nodejs22.0.0"
     }
   }
 }
